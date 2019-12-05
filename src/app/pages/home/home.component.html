@@ -1,1 +1,12 @@
-<p>home works!</p>
+<div class="container-fluid">
+  <!-- If we don't have movies yet -->
+  <div class="we-dont-have-movies">
+    <p class="description">
+      <span>We don't have movies yet! Please go and create your first one!</span>
+      <a [routerLink]="'/add-new-movie'" class="btn btn-outline-dark">
+        <i class="fa fa-film" aria-hidden="true"></i>
+        Add My First Film
+      </a>
+    </p>
+  </div>
+</div>
