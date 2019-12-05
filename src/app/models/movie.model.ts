@@ -1,4 +1,4 @@
-interface MovieModel {
+export interface MovieModel {
   id: string,
   title: string,
   release: Date,

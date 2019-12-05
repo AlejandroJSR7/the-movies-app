@@ -9,6 +9,10 @@ import { MainNavigationComponent } from './components/main-navigation/main-navig
 import { TopFiveMoviesComponent } from './pages/top-five-movies/top-five-movies.component';
 import { TopMoviesOfAllTimeComponent } from './pages/top-movies-of-all-time/top-movies-of-all-time.component';
 import { AddNewMovieComponent } from './pages/add-new-movie/add-new-movie.component';
+import { MoviesListComponent } from './components/movies-list/movies-list.component';
+
+import { MoviesService } from './services/movies.service';
+import { MovieItemComponent } from './components/movie-item/movie-item.component';
 
 @NgModule({
   declarations: [
@@ -17,14 +21,18 @@ import { AddNewMovieComponent } from './pages/add-new-movie/add-new-movie.compon
     MainNavigationComponent,
     TopFiveMoviesComponent,
     TopMoviesOfAllTimeComponent,
-    AddNewMovieComponent
+    AddNewMovieComponent,
+    MoviesListComponent,
+    MovieItemComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule
   ],
-  providers: [],
+  providers: [
+    MoviesService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

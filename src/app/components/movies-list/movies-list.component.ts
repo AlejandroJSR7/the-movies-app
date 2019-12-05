@@ -3,14 +3,13 @@ import { MoviesService } from '../../services/movies.service';
 import { MovieModel } from '../../models/movie.model';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.scss']
+  selector: 'app-movies-list',
+  templateUrl: './movies-list.component.html',
+  styleUrls: ['./movies-list.component.scss']
 })
-export class HomeComponent implements OnInit {
+export class MoviesListComponent implements OnInit {
 
   listMovies: MovieModel[];
-  weHaveMovies = false;
 
   constructor(
     public MovieService: MoviesService
@@ -18,9 +17,6 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.listMovies = this.MovieService.getMovies();
-    if (this.listMovies.length <= 0) {
-      this.weHaveMovies = true;
-    }
   }
 
 }

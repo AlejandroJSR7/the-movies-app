@@ -1,6 +1,6 @@
 <div class="container-fluid">
   <!-- If we don't have movies yet -->
-  <div class="we-dont-have-movies">
+  <div class="we-dont-have-movies" [hidden]="!weHaveMovies">
     <p class="description">
       <span>We don't have movies yet! Please go and create your first one!</span>
       <a [routerLink]="'/add-new-movie'" class="btn btn-outline-dark">
@@ -8,5 +8,15 @@
         Add My First Film
       </a>
     </p>
+  </div>
+  <div class="we-have-movies" [hidden]="weHaveMovies">
+    <div class="row justify-content-center">
+      <div class="col col-md-4">
+        <app-movies-list></app-movies-list>
+      </div>
+      <div class="col col-md-8">
+        
+      </div>
+    </div>
   </div>
 </div>

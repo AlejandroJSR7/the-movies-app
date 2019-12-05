@@ -31,10 +31,7 @@ export class AddNewMovieComponent implements OnInit {
   addNewMovie(formNewMovie: any) {
     if (formNewMovie.status === 'VALID') {
       const formData = this.MovieForm.getRawValue();
-
       this.moviesService.addMovie(formData);
-
-
       this.router.navigate(['home']);
       console.log(formData);
     }

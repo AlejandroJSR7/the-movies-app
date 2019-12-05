@@ -1,0 +1,7 @@
+<div class="movies-list p-t-40">
+  <a [routerLink]="'/add-new-movie'" class="btn btn-primary btn-block mb-3">
+    <i class="fa fa-film" aria-hidden="true"></i>
+    Add a new film
+  </a>
+  <app-movie-item *ngFor="let movieItem of listMovies" [MovieItem]="movieItem"></app-movie-item>
+</div>

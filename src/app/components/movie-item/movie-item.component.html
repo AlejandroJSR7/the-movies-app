@@ -1,0 +1,11 @@
+<div class="movie-item card mb-4">
+    <div class="card-body">
+      <h4 class="movie-item__title">
+        <span>{{MovieItem.filmTitle}}</span>
+        <button class="movie-item__delete" (click)="deleteMovie(MovieItem)">
+          <i class="fa fa-trash-o" aria-hidden="true"></i>
+        </button>
+      </h4>
+      {{MovieItem.filmDescription}}
+    </div>
+  </div>
