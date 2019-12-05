@@ -1,1 +1,39 @@
-<p>add-new-movie works!</p>
+<div class="container">
+  <div class="row justify-content-md-center">
+    <div class="col col-md-6">
+      <div class="add-new-movie">
+        <h4 class="text-center">New Film:</h4>
+        <form [formGroup]="MovieForm" (submit)="addNewMovie(MovieForm)">
+          <div class="form-group">
+            <label for="filmTitle">Film Name:</label>
+            <input #filmTitle formControlName="filmTitle" type="email" class="form-control" id="filmTitle" placeholder="Enter film name" />
+            </div>
+            <div class="form-group">
+              <label for="filmRelease">Film Release:</label>
+              <input #filmRelease formControlName="filmRelease" type="date" class="form-control" id="filmRelease" />
+            </div>
+            <div class="form-group">
+              <label for="filmDescription">Film Description:</label>
+              <textarea #filmDescription formControlName="filmDescription" class="form-control" id="filmDescription" ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="filmPicture">Film Picture:</label>
+              <div class="custom-file mb-3">
+                <input #filmPicture formControlName="filmPicture" type="file" class="custom-file-input" id="filmPicture">
+                <label class="custom-file-label" for="filmPicture">Choose picture</label>
+              </div>
+            </div>
+            <button [disabled]="MovieForm.invalid" class="btn btn-primary btn-block" type="submit">Save</button>
+        </form>
+      </div>
+    </div>
+    <!-- <div class="col col-md-6">
+      <div class="preview-new-movie">
+        <h4>Preview image of new movie:</h4>
+        <div>
+          <img src="https://via.placeholder.com/150" alt="Film Picture">
+        </div>
+      </div>
+    </div> -->
+  </div>
+</div>

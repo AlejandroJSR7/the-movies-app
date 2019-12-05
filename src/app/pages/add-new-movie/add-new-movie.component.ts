@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-add-new-movie',
@@ -7,9 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AddNewMovieComponent implements OnInit {
 
-  constructor() { }
+  MovieForm: FormGroup;
+
+  constructor(
+    public builder: FormBuilder
+  ) {
+    this.MovieForm = this.builder.group({
+      id: [null],
+      filmTitle: [null, Validators.required],
+      filmRelease: [null, Validators.required],
+      filmDescription: [null, Validators.required],
+      filmPicture: [null]
+    });
+  }
 
   ngOnInit() {
+  }
+
+  addNewMovie(values) {
+    console.log(values);
+    return false;
   }
 
 }

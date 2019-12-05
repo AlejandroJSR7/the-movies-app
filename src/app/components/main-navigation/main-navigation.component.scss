@@ -1,4 +1,8 @@
-.navbar {
+@import '../../../assets/scss/variables';
+
+
+nav.navbar {
+  background-color: $brand-color;
   .navbar-brand {
     font-family: 'Comfortaa', cursive;
   }

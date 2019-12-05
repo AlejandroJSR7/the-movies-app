@@ -1,0 +1,15 @@
+$border-radius-of-elements: 2px;
+
+body { // add specifity
+  .btn {
+    border-radius: $border-radius-of-elements;
+  }
+  .form-control,
+  .custom-file-label {
+    border-radius: $border-radius-of-elements;
+  }
+  .custom-file-label:after {
+    border-radius: 0 $border-radius-of-elements $border-radius-of-elements 0;
+  }
+
+}
