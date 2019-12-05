@@ -1,13 +1,16 @@
 import { Injectable } from '@angular/core';
 import { MovieModel } from '../models/movie.model';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MoviesService {
   moviesList: MovieModel[];
-
-  constructor() {
+  public URL_API = 'http://www.mocky.io/v2/5dc3c053300000540034757b';
+  constructor(
+    private http: HttpClient
+  ) {
     this.moviesList = [];
   }
 
@@ -39,6 +42,10 @@ export class MoviesService {
         localStorage.setItem('ls_the_movies', JSON.stringify(this.moviesList));
       }
     }
+  }
+
+  getTopFive() {
+    return this.http.get(this.URL_API);
   }
 
 }

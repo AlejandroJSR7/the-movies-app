@@ -13,6 +13,8 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 
 import { MoviesService } from './services/movies.service';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
+import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -23,12 +25,14 @@ import { MovieItemComponent } from './components/movie-item/movie-item.component
     TopMoviesOfAllTimeComponent,
     AddNewMovieComponent,
     MoviesListComponent,
-    MovieItemComponent
+    MovieItemComponent,
+    MovieDetailComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     MoviesService

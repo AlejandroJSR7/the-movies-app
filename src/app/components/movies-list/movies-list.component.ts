@@ -19,4 +19,8 @@ export class MoviesListComponent implements OnInit {
     this.listMovies = this.MovieService.getMovies();
   }
 
+  selectMovie(theMovie: MovieModel) {
+    console.log('Selected: ', theMovie)
+  }
+
 }

@@ -4,5 +4,5 @@
     Add a new film
   </a>
   <hr>
-  <app-movie-item *ngFor="let movieItem of listMovies" [MovieItem]="movieItem"></app-movie-item>
+  <app-movie-item (click)="selectMovie(movieItem)" *ngFor="let movieItem of listMovies" [isTopFive]="true" [MovieItem]="movieItem"></app-movie-item>
 </div>

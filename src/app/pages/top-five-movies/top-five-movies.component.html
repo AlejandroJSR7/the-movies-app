@@ -1,1 +1,7 @@
-<p>top-five-movies works!</p>
+<div class="container mt-4">
+  <div class="top-five-movies">
+    <div class="row justify-content-center">
+      <app-movie-item class="col col-md-6" *ngFor="let movieItem of listMovies" [MovieItem]="movieItem"></app-movie-item>
+    </div>
+  </div>
+</div>

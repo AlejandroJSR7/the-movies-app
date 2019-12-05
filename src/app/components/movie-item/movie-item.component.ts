@@ -10,6 +10,7 @@ import { MoviesService } from 'src/app/services/movies.service';
 export class MovieItemComponent implements OnInit {
 
   @Input() MovieItem: MovieModel;
+  @Input() isTopFive = false;
 
   constructor(
     public MovieService: MoviesService

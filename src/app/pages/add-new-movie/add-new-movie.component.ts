@@ -33,7 +33,6 @@ export class AddNewMovieComponent implements OnInit {
       const formData = this.MovieForm.getRawValue();
       this.moviesService.addMovie(formData);
       this.router.navigate(['home']);
-      console.log(formData);
     }
     return false;
   }
