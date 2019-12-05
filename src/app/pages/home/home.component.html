@@ -14,7 +14,26 @@
       <div class="col col-md-4">
         <app-movies-list></app-movies-list>
       </div>
-      <div class="col col-md-8">
+      <div class="col col-md-8 p-t-40">
+        <div class="row justify-content-center">
+          <div class="col-md-8">
+            <div class="preview-movie" *ngIf="!selectedMovie">
+              <h4 class="text-center">Hey! select a movie to see the content.</h4>
+            </div>
+            <div class="preview-movie" *ngIf="selectedMovie">
+              <div class="card" style="width: 18rem;">
+                <img [src]="selectedMovie.filmPicture ? selectedMovie.filmPicture : 'https://via.placeholder.com/250?text=Without+image'" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{selectedMovie.filmTitle}}</h5>
+                  <blockquote class="blockquote mb-0">
+                    <p>{{selectedMovie.filmDescription}}</p>
+                    <footer class="blockquote-footer">{{selectedMovie.filmRelease}}</footer>
+                  </blockquote>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>

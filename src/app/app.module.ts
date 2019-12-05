@@ -15,6 +15,7 @@ import { MoviesService } from './services/movies.service';
 import { MovieItemComponent } from './components/movie-item/movie-item.component';
 import { MovieDetailComponent } from './components/movie-detail/movie-detail.component';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { DataService } from './services/sharing-data.service';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     HttpClientModule
   ],
   providers: [
-    MoviesService
+    MoviesService,
+    DataService
   ],
   bootstrap: [AppComponent]
 })

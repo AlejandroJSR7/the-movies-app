@@ -1,7 +1,6 @@
 export interface MovieModel {
-  id: string,
-  title: string,
-  release: Date,
-  description: string,
-  image: string
+  filmTitle: string,
+  filmRelease: Date,
+  filmDescription: string,
+  filmPicture: string
 }

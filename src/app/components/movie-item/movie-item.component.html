@@ -1,9 +1,9 @@
 <div class="movie-item card mb-4">
   <div class="row no-gutters">
-    <div class="col-md-4">
-      <img [src]="MovieItem.filmPicture ? MovieItem.filmPicture : 'https://source.unsplash.com/daily'" class="card-img" alt="...">
+    <div class="col-md-3">
+      <img [src]="MovieItem.filmPicture ? MovieItem.filmPicture : 'https://via.placeholder.com/250?text=Without+image'" class="card-img" alt="...">
     </div>
-    <div class="col-md-8 d-flex flex-wrap">
+    <div class="col-md-9 d-flex flex-wrap">
       <div class="card-body">
         <h4 class="movie-item__title">
           <span>{{MovieItem.filmTitle}}</span>

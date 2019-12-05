@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MoviesService } from '../../services/movies.service';
 import { MovieModel } from '../../models/movie.model';
+import { DataService } from 'src/app/services/sharing-data.service';
 
 @Component({
   selector: 'app-movies-list',
@@ -12,7 +13,9 @@ export class MoviesListComponent implements OnInit {
   listMovies: MovieModel[];
 
   constructor(
-    public MovieService: MoviesService
+    public MovieService: MoviesService,
+    public dataService: DataService
+
   ) { }
 
   ngOnInit() {
@@ -20,7 +23,8 @@ export class MoviesListComponent implements OnInit {
   }
 
   selectMovie(theMovie: MovieModel) {
-    console.log('Selected: ', theMovie)
+    console.log('Selected: ', theMovie);
+    this.dataService.changeMessage(theMovie);
   }
 
 }
