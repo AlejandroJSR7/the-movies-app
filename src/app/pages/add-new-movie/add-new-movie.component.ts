@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MoviesService } from 'src/app/services/movies.service';
 
 @Component({
   selector: 'app-add-new-movie',
@@ -11,10 +13,11 @@ export class AddNewMovieComponent implements OnInit {
   MovieForm: FormGroup;
 
   constructor(
-    public builder: FormBuilder
+    public builder: FormBuilder,
+    private router: Router,
+    public moviesService: MoviesService
   ) {
     this.MovieForm = this.builder.group({
-      id: [null],
       filmTitle: [null, Validators.required],
       filmRelease: [null, Validators.required],
       filmDescription: [null, Validators.required],
@@ -25,8 +28,16 @@ export class AddNewMovieComponent implements OnInit {
   ngOnInit() {
   }
 
-  addNewMovie(values) {
-    console.log(values);
+  addNewMovie(formNewMovie: any) {
+    if (formNewMovie.status === 'VALID') {
+      const formData = this.MovieForm.getRawValue();
+
+      this.moviesService.addMovie(formData);
+
+
+      this.router.navigate(['home']);
+      console.log(formData);
+    }
     return false;
   }
 
